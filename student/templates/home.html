@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <h1 class="display-6">Welcome To Folks.</h1> -->
+<figure class="text-center">
+    <blockquote class="blockquote">
+      <p>“Today is the first day of the rest of your life.”</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      <cite title="Source Title">Charles Dederich</cite>
+    </figcaption>
+  </figure>
+
+<div class="">
+    <h3 id="ann" class="text-center"><strong>Announcement</strong></h3>
+    <ul>
+        <li><p>Your final exam date is <mark>27 December</mark>so prepare yourself according.</p></li>
+        <li><p>Time-table will declare soon.</p></li>
+    </ul>
+</div>
+<div class="dander">
+    <h3 id="note" class="text-center"><strong>Note.</strong></h3>
+    <ul>
+        <li>All studnet have to present in yoga session </li>
+        <li>Weekly test result declare <strong>Today</strong></li>
+    </ul>
+</div>
+
+<div class="text-center">
+<a href="{% url 'signup' %}" class="btn btn-primary signup">Sign Up</a>
+<a href="{% url 'login' %}" class="btn btn-danger ">Login</a>
+</div>
+{% endblock content %}

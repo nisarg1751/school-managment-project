@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if search %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">First-name</th>
+            <th scope="col">Last-name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+<h1>No match found</h1>
+<a href="{% url 'data' %}" class="btn btn-danger">Back</a>
+{% endblock content %}

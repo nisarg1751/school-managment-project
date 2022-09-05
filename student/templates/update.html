@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {% for i in form %}
+        {{i.label_tag}}{{i}} {{i.errors|striptags}}<br><br>
+        {% endfor %}
+        {% for i in form1 %}
+        {{i.label_tag}}{{i}} {{i.errors|striptags}}<br><br>
+        {% endfor %}
+    <input type="submit" class="btn btn-warning" value="submit">
+</form>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}

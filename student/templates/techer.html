@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Teacher</h1>
+<h1>Welcome ,{{username}}</h1>
+<div>
+<a href="{% url 'logout' %}" class="btn btn-danger ">Logout</a>
+<a href="{% url 'userchange' %}">Edit your form</a>
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}

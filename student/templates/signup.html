@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post" novalidate enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <!-- {{form.as_p}} -->
+        {% for i in form %}
+        {{i.label_tag}}{{i}} {{i.errors|striptags}}<br><br>
+        {% endfor %}
+        {{form1}}<br><br>
+        <input type="checkbox" name="study[]" id="online" value="Online">Online <br>
+        <input type="checkbox" name="study[]" id="offline" value="Offline">Offline <br>
+        <!-- <input type="file" name='image'  multiple alt=""> -->
+        <input type="submit" class=" btn btn-primary" value="submit">
+    </div>
+</form>
+
+{% if x.is_staff %}
+<a href="{% url 'data' %}" class="btn btn-warning">Back</a>
+{% else %}
+<a href="{% url 'home' %}" class="btn btn-warning">Back</a>
+{% endif %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endblock content%}
